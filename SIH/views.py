@@ -8,7 +8,13 @@ import base64
 
 @csrf_exempt
 def index(request):
-    print(request.body)
+    # print(request.body)
+
+    if(request.method == "OPTIONS"):
+        res = HttpResponse()
+        res["allow"] = ','.join(['get','post'])
+        return res
+
     if(request.method == "POST"):
         req_body = request.body.decode('utf-8')
         body = json.loads(req_body)

@@ -18,6 +18,7 @@ import math
 import cv2
 from io import BytesIO
 from pylsd.lsd import lsd
+import sys
 
 import argparse
 import os
